@@ -21,6 +21,8 @@ export const metadata: Metadata = {
   title: "Martha Stewart's Meal Delivery Service｜Martha & Marley Spoon",
   description:
     "Martha & Marley Spoon delivers delicious, 30-minute recipes with farm-fresh ingredients to your door. Learn cooking techniques from Martha Stewart and save time with her meal kit.",
+  // we don't want this to end up on google
+  robots: "noindex,nofollow",
 };
 
 export default function RootLayout({
