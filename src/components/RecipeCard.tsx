@@ -34,7 +34,9 @@ export function RecipeCard({
         ) : null}
       </div>
       <CardContent>
-        <CardTitle className="mb-4">{title}</CardTitle>
+        <Link href={`/recipe/${generateSlug({ id, title })}`}>
+          <CardTitle className="mb-4">{title}</CardTitle>
+        </Link>
         <MetaBar recipe={{ tags }} id={id} />
       </CardContent>
       <CardFooter className="mt-auto">
