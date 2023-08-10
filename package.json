@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "codegen": "env-cmd -f .env.local -x cf-content-types-generator -e master -s \\$CONTENTFUL_SPACE_ID -t \\$CONTENTFUL_ACCESS_TOKEN -o ./src/generated"
+    "codegen": "env-cmd -f .env.local -x cf-content-types-generator -e master -s \\$CONTENTFUL_SPACE_ID -t \\$CONTENTFUL_MANAGEMENT_TOKEN -o ./src/generated",
+    "type-check": "tsc --noEmit",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
@@ -34,6 +36,7 @@
   },
   "devDependencies": {
     "prettier": "^3.0.1",
-    "prettier-plugin-tailwindcss": "^0.4.1"
+    "prettier-plugin-tailwindcss": "^0.4.1",
+    "husky": "^8.0.0"
   }
 }

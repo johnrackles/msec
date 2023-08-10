@@ -2,6 +2,8 @@ import { RecipeCard } from "@/components/RecipeCard";
 import { TypographyH1, TypographyH2 } from "@/components/Typography";
 import { RecipeEntrySkelton, api } from "@/lib/api";
 
+export type GetRecipeList = Awaited<ReturnType<typeof getRecipeList>>;
+
 async function getRecipeList() {
   const entries =
     // withoutUnresolvableLinks is the magic to make typescript happy
