@@ -23,3 +23,8 @@ pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Possible Improvements
+
+If there was a contentful management token provided, the typescript types could be generated automatically using the contentful cli. This would allow for better type safety and less boilerplate code.
+I've included the sample npm script in the package.json.

@@ -1,4 +1,5 @@
 import { GetRecipeList } from "@/app/page";
+import { generateSlug } from "@/lib/generateSlug";
 import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
@@ -45,7 +46,7 @@ export function RecipeCard({
       </CardContent>
       <CardFooter className="mt-auto">
         <Button asChild>
-          <Link href={`/recipe/${title.replaceAll(" ", "-")}-${id}`}>
+          <Link href={`/recipe/${generateSlug({ id, title })}`}>
             Go to recipe
           </Link>
         </Button>

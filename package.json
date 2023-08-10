@@ -9,13 +9,15 @@
     "lint": "next lint",
     "codegen": "env-cmd -f .env.local -x cf-content-types-generator -e master -s \\$CONTENTFUL_SPACE_ID -t \\$CONTENTFUL_MANAGEMENT_TOKEN -o ./src/generated",
     "type-check": "tsc --noEmit",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "test": "vitest"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
     "@types/node": "20.4.9",
     "@types/react": "18.2.20",
     "@types/react-dom": "18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
     "autoprefixer": "10.4.14",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
@@ -35,8 +37,10 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "husky": "^8.0.0",
+    "jsdom": "^22.1.0",
     "prettier": "^3.0.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
-    "husky": "^8.0.0"
+    "vitest": "^0.34.1"
   }
 }
