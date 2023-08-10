@@ -4,6 +4,8 @@ import { RecipeEntrySkelton, api } from "@/lib/api";
 
 export type GetRecipeList = Awaited<ReturnType<typeof getRecipeList>>;
 
+export const revalidate = 60; // 1minute
+
 async function getRecipeList() {
   const entries =
     // withoutUnresolvableLinks is the magic to make typescript happy

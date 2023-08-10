@@ -20,13 +20,8 @@ export function RecipeCard({
   id: string;
 }) {
   return (
-    <Card className="mx-auto h-full">
+    <Card className="mx-auto flex h-full flex-col">
       <div className="relative">
-        {Array.isArray(tags) && tags[0]?.fields.name ? (
-          <Badge className="absolute bottom-2 left-2">
-            {tags[0].fields.name}
-          </Badge>
-        ) : null}
         {photo?.fields.file?.url ? (
           <Image
             src={`https:${photo.fields.file.url}`}
@@ -40,10 +35,15 @@ export function RecipeCard({
       </div>
       <CardContent>
         <CardTitle className="mb-4">{title}</CardTitle>
-        <Rating id={id} className="mb-4" />
+        <div className="my-4 flex flex-row items-center">
+          <Rating className="mr-4" id={id} />
+          {Array.isArray(tags) && tags[0] ? (
+            <Badge>{tags[0]?.fields.name}</Badge>
+          ) : null}
+        </div>
         <ReactMarkdown>{description}</ReactMarkdown>
       </CardContent>
-      <CardFooter className="">
+      <CardFooter className="mt-auto">
         <Button asChild>
           <Link href={`/recipe/${title.replaceAll(" ", "-")}-${id}`}>
             Go to recipe
