@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import "./globals.css";
 
-const inter = Lato({
+const lato = Lato({
   subsets: ["latin"],
   weight: ["400"],
   variable: "--font-lato",
@@ -34,7 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          inter.variable,
+          lato.variable,
           proximaNova.variable,
           "grid min-h-screen grid-rows-[auto,1fr] bg-secondary font-sans",
         )}

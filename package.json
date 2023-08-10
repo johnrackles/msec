@@ -37,10 +37,15 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
+    "eslint-config-prettier": "^9.0.0",
     "husky": "^8.0.0",
     "jsdom": "^22.1.0",
-    "prettier": "^3.0.1",
+    "lint-staged": "^13.2.3",
+    "prettier": "3.0.1",
     "prettier-plugin-tailwindcss": "^0.4.1",
     "vitest": "^0.34.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,md}": "prettier --write"
   }
 }

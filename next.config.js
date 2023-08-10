@@ -1,14 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  reactStrictMode: true, images: {
+  reactStrictMode: true,
+  images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'images.ctfassets.net',
+        protocol: "https",
+        hostname: "images.ctfassets.net",
       },
     ],
-    formats: ['image/avif', 'image/webp'],
+    formats: ["image/avif", "image/webp"],
   },
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
