@@ -23,14 +23,16 @@ export function RecipeCard({
     <Card className="mx-auto flex h-full flex-col">
       <div className="relative">
         {photo?.fields.file?.url ? (
-          <Image
-            src={`https:${photo.fields.file.url}`}
-            alt={title}
-            width={photo.fields.file.details.image?.width}
-            height={photo.fields.file.details.image?.height}
-            className="mb-4 h-52 max-w-full object-cover md:mb-8"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-          />
+          <Link href={`/recipe/${generateSlug({ id, title })}`}>
+            <Image
+              src={`https:${photo.fields.file.url}`}
+              alt={`Go to recipe ${title}`}
+              width={photo.fields.file.details.image?.width}
+              height={photo.fields.file.details.image?.height}
+              className="mb-4 h-52 max-w-full object-cover md:mb-8"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
+            />
+          </Link>
         ) : null}
       </div>
       <CardContent>
