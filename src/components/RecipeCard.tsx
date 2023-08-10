@@ -2,8 +2,7 @@ import { GetRecipeList } from "@/app/page";
 import { generateSlug } from "@/lib/generateSlug";
 import Image from "next/image";
 import Link from "next/link";
-import { Rating } from "./Rating";
-import { Badge } from "./ui/badge";
+import { MetaBar } from "./MetaBar";
 import { Button } from "./ui/button";
 import { Card, CardContent, CardFooter, CardTitle } from "./ui/card";
 
@@ -37,12 +36,7 @@ export function RecipeCard({
       </div>
       <CardContent>
         <CardTitle className="mb-4">{title}</CardTitle>
-        <div className="my-4 flex flex-row items-center">
-          <Rating className="mr-4" id={id} />
-          {Array.isArray(tags) && tags[0] ? (
-            <Badge>{tags[0]?.fields.name}</Badge>
-          ) : null}
-        </div>
+        <MetaBar recipe={{ tags }} id={id} />
       </CardContent>
       <CardFooter className="mt-auto">
         <Button asChild>

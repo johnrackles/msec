@@ -1,6 +1,5 @@
-import { Rating } from "@/components/Rating";
+import { MetaBar } from "@/components/MetaBar";
 import { TypographyH1, TypographyH3 } from "@/components/Typography";
-import { Badge } from "@/components/ui/badge";
 import { RecipeEntrySkelton, api } from "@/lib/api";
 import { generateSlug } from "@/lib/generateSlug";
 import Image from "next/image";
@@ -69,12 +68,7 @@ export default async function Recipe({
         {recipe.fields.chef ? (
           <TypographyH3>by {recipe.fields.chef.fields.name}</TypographyH3>
         ) : null}
-        <div className="mt-4 flex flex-row items-center">
-          {Array.isArray(recipe.fields.tags) && recipe.fields.tags[0] ? (
-            <Badge className="mr-4">{recipe.fields.tags[0]?.fields.name}</Badge>
-          ) : null}
-          <Rating id={id} />
-        </div>
+        <MetaBar recipe={recipe.fields} id={recipe.sys.id} />
         <ReactMarkdown className="mt-4">
           {recipe.fields.description}
         </ReactMarkdown>
