@@ -29,8 +29,6 @@ export function Rating({ id, className }: Props) {
 
   const array = [...Array(5).keys()];
 
-  const starStyle = "cursor-pointer pointer-events-none text-gray-300";
-
   return (
     <div className={cn("rating z-10 flex flex-row", className)}>
       {array.map((item) => (
@@ -49,7 +47,7 @@ export function Rating({ id, className }: Props) {
         >
           <Star
             className={cn(
-              starStyle,
+              "pointer-events-none cursor-pointer text-gray-300",
               hoverRating === 0 && rating > item && "text-yellow-500",
               hoverRating > 0 && hoverRating > item && "text-yellow-500",
             )}
