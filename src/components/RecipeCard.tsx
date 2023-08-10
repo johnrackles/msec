@@ -1,4 +1,4 @@
-import { getRecipeList } from "@/app/page";
+import { type GetRecipeList } from "@/app/page";
 import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
@@ -14,7 +14,7 @@ export function RecipeCard({
   tags,
   id,
 }: Pick<
-  Awaited<ReturnType<typeof getRecipeList>>["items"][number]["fields"],
+  GetRecipeList["items"][number]["fields"],
   "title" | "description" | "photo" | "tags"
 > & {
   id: string;
