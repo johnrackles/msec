@@ -8,7 +8,6 @@ import { Card, CardContent, CardFooter, CardTitle } from "./ui/card";
 
 export function RecipeCard({
   title,
-  description,
   photo,
   tags,
   id,
