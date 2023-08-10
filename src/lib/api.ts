@@ -6,15 +6,21 @@ type Tag = {
   fields: { name: string };
 };
 
+type Chef = {
+  contentTypeId: "chef";
+  fields: { name: contentful.EntryFieldTypes.Text };
+};
+
 export type RecipeEntrySkelton = {
   contentTypeId: "recipe";
   fields: {
     title: contentful.EntryFieldTypes.Text;
     photo: contentful.EntryFieldTypes.AssetLink;
     description: contentful.EntryFieldTypes.Text;
-    tags: contentful.EntryFieldTypes.Array<
+    tags?: contentful.EntryFieldTypes.Array<
       contentful.EntryFieldTypes.EntryLink<Tag>
     >;
+    chef?: contentful.EntryFieldTypes.EntryLink<Chef>;
   };
 };
 

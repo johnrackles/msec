@@ -1,5 +1,5 @@
 import { Rating } from "@/components/Rating";
-import { TypographyH1 } from "@/components/Typography";
+import { TypographyH1, TypographyH3 } from "@/components/Typography";
 import { Badge } from "@/components/ui/badge";
 import { RecipeEntrySkelton, api } from "@/lib/api";
 import { generateSlug } from "@/lib/generateSlug";
@@ -66,6 +66,9 @@ export default async function Recipe({
       ) : null}
       <div className="mx-auto max-w-2xl">
         <TypographyH1>{recipe.fields.title}</TypographyH1>
+        {recipe.fields.chef ? (
+          <TypographyH3>by {recipe.fields.chef.fields.name}</TypographyH3>
+        ) : null}
         <div className="mt-4 flex flex-row items-center">
           {Array.isArray(recipe.fields.tags) && recipe.fields.tags[0] ? (
             <Badge className="mr-4">{recipe.fields.tags[0]?.fields.name}</Badge>

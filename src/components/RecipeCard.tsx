@@ -2,7 +2,6 @@ import { GetRecipeList } from "@/app/page";
 import { generateSlug } from "@/lib/generateSlug";
 import Image from "next/image";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
 import { Rating } from "./Rating";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
@@ -42,7 +41,6 @@ export function RecipeCard({
             <Badge>{tags[0]?.fields.name}</Badge>
           ) : null}
         </div>
-        <ReactMarkdown>{description}</ReactMarkdown>
       </CardContent>
       <CardFooter className="mt-auto">
         <Button asChild>

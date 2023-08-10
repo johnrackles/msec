@@ -23,7 +23,7 @@ export default async function Home() {
     <>
       <TypographyH1>Welcome to Marley Spoon</TypographyH1>
       <TypographyH2>Recipes</TypographyH2>
-      <ul className="my-4 grid items-stretch justify-center gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4 lg:gap-12">
+      <ul className="mx-auto my-4 mt-4 grid max-w-4xl items-stretch justify-center gap-4 md:mt-8 md:grid-cols-2 md:gap-8 lg:mt-12 lg:gap-12">
         {recipes.items.map((recipe) => (
           <li key={recipe.sys.id} className="self-stretch">
             <RecipeCard {...recipe.fields} id={recipe.sys.id} />
