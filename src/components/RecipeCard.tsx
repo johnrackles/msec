@@ -1,4 +1,4 @@
-import { type GetRecipeList } from "@/app/page";
+import { GetRecipeList } from "@/app/page";
 import Image from "next/image";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
