@@ -34,10 +34,10 @@ export default function RootLayout({
         className={cn(
           inter.variable,
           proximaNova.variable,
-          "grid min-h-screen grid-rows-[auto,1fr,auto] font-sans",
+          "grid min-h-screen grid-rows-[auto,1fr] bg-secondary font-sans",
         )}
       >
-        <header className="flex h-16 items-center justify-center shadow-sm">
+        <header className="flex h-16 items-center justify-center bg-primary shadow-sm">
           <Link href="/">
             <Image
               src={require("./logo.svg")}
@@ -46,10 +46,9 @@ export default function RootLayout({
             />
           </Link>
         </header>
-        <main className="container mx-auto p-4 md:p-8 lg:p-12">{children}</main>
-        <footer className="bg-secondary p-4 text-center md:p-8 lg:p-12">
-          © {new Date().getFullYear()}
-        </footer>
+        <main className="container mx-auto bg-white p-4 md:p-8 lg:p-12">
+          {children}
+        </main>
       </body>
     </html>
   );

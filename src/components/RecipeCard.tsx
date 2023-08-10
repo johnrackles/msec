@@ -20,7 +20,7 @@ export function RecipeCard({
   id: string;
 }) {
   return (
-    <Card className="mx-auto flex h-full flex-col bg-secondary">
+    <Card className="mx-auto flex h-full flex-col">
       <div className="relative">
         {photo?.fields.file?.url ? (
           <Image
